@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLB Beach Resort — Posters</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Cinzel:wght@400;600;900&family=Raleway:wght@100;200;300;400;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding: 50px 20px 80px;
+  font-family: sans-serif;
+}
+
+.page-title {
+  color: rgba(255,255,255,0.25);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.5em;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════
+   POSTER 1 — DARK LUXURY / CINEMATIC
+   Deep navy + liquid gold ink aesthetic
+══════════════════════════════════════════ */
+.poster1 {
+  width: 700px;
+  height: 980px;
+  position: relative;
+  overflow: hidden;
+  background: #04080f;
+  flex-shrink: 0;
+}
+
+.p1-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 30%, rgba(10,60,80,0.7) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 70%, rgba(15,40,60,0.5) 0%, transparent 60%),
+    linear-gradient(180deg, #04080f 0%, #071525 40%, #0a1f30 70%, #04080f 100%);
+}
+
+/* Vertical gold ink streaks */
+.p1-ink {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, rgba(201,168,76,0.5) 30%, rgba(201,168,76,0.15) 70%, transparent 100%);
+  animation: inkFade 4s ease-in-out infinite alternate;
+}
+.p1-ink:nth-child(1) { left: 15%; animation-delay: 0s; }
+.p1-ink:nth-child(2) { left: 35%; opacity: 0.5; animation-delay: 1s; }
+.p1-ink:nth-child(3) { left: 65%; opacity: 0.3; animation-delay: 2s; }
+.p1-ink:nth-child(4) { left: 85%; animation-delay: 0.5s; }
+@keyframes inkFade { from{opacity:0.3} to{opacity:1} }
+
+/* Resort image as background layer */
+.p1-img {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 55%;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.7) brightness(0.35) contrast(1.1);
+  mix-blend-mode: luminosity;
+}
+
+/* Gradient overlay over image */
+.p1-img-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60%;
+  background: linear-gradient(
+    180deg,
+    #04080f 0%,
+    rgba(4,8,15,0.6) 30%,
+    rgba(4,8,15,0.3) 60%,
+    rgba(4,8,15,0.85) 100%
+  );
+}
+
+/* Top gold rule */
+.p1-top-rule {
+  position: absolute;
+  top: 48px; left: 60px; right: 60px;
+  display: flex; align-items: center; gap: 0;
+}
+.p1-rule-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+}
+.p1-rule-dot {
+  width: 5px; height: 5px;
+  background: #c9a84c;
+  transform: rotate(45deg);
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+.p1-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 60px 60px;
+}
+
+.p1-est {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.58rem;
+  letter-spacing: 0.55em;
+  color: rgba(201,168,76,0.7);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.p1-name {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: 6.8rem;
+  line-height: 0.85;
+  letter-spacing: 0.15em;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  text-shadow: 0 0 60px rgba(201,168,76,0.25), 0 0 120px rgba(10,60,80,0.8);
+}
+.p1-name::after {
+  content: 'SLB';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #c9a84c 0%, #fff 40%, #e8c97a 60%, #c9a84c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.p1-subtitle {
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0.6em;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+/* Centre ornament */
+.p1-ornament {
+  margin: 28px 0;
+  display: flex; align-items: center; gap: 14px;
+  width: 100%;
+}
+.p1-orn-line { flex:1; height:1px; background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent); }
+.p1-orn-icon { color: #c9a84c; font-size: 1rem; }
+
+.p1-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.55rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  line-height: 1.5;
+  max-width: 480px;
+}
+.p1-tagline em { color: #e8c97a; font-style: normal; }
+
+/* Middle spacer pushes content to bottom */
+.p1-spacer { flex: 1; }
+
+/* Features row */
+.p1-features {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  margin-bottom: 28px;
+}
+.p1-feat {
+  flex: 1;
+  text-align: center;
+  padding: 16px 8px;
+  border-right: 1px solid rgba(201,168,76,0.1);
+}
+.p1-feat:last-child { border-right: none; }
+.p1-feat-icon { font-size: 1.1rem; display: block; margin-bottom: 5px; }
+.p1-feat-label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 0.52rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+/* Bottom strip */
+.p1-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.p1-booking {
+  text-align: left;
+}
+.p1-book-label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.5rem;
+  letter-spacing: 0.4em;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.p1-book-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #c9a84c, #a07830);
+  color: #04080f;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+}
+.p1-hours {
+  text-align: right;
+}
+.p1-hours-num {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #c9a84c;
+  line-height: 1;
+}
+.p1-hours-label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.52rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* corner decorations */
+.p1-corner {
+  position: absolute;
+  width: 30px; height: 30px;
+}
+.p1-corner--tl { top: 24px; left: 24px; border-top: 2px solid rgba(201,168,76,0.5); border-left: 2px solid rgba(201,168,76,0.5); }
+.p1-corner--tr { top: 24px; right: 24px; border-top: 2px solid rgba(201,168,76,0.5); border-right: 2px solid rgba(201,168,76,0.5); }
+.p1-corner--bl { bottom: 24px; left: 24px; border-bottom: 2px solid rgba(201,168,76,0.5); border-left: 2px solid rgba(201,168,76,0.5); }
+.p1-corner--br { bottom: 24px; right: 24px; border-bottom: 2px solid rgba(201,168,76,0.5); border-right: 2px solid rgba(201,168,76,0.5); }
+
+
+/* ══════════════════════════════════════════
+   POSTER 2 — TROPICAL EDITORIAL
+   Warm sunrise orange + cream — magazine style
+══════════════════════════════════════════ */
+.poster2 {
+  width: 700px;
+  height: 980px;
+  position: relative;
+  overflow: hidden;
+  background: #f5ede0;
+  flex-shrink: 0;
+}
+
+.p2-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 60% at 50% 0%, rgba(255,160,60,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 50% at 80% 100%, rgba(180,100,30,0.12) 0%, transparent 50%),
+    #f7efe2;
+}
+
+/* Horizontal color block top */
+.p2-header-block {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 420px;
+  background: linear-gradient(160deg, #1a4040 0%, #0d5555 40%, #1a6060 70%, #0a3535 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.p2-img {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 420px;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: saturate(1.2) brightness(0.55) contrast(1.1);
+  mix-blend-mode: multiply;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.p2-content {
+  position: absolute;
+  inset: 0;
+}
+
+/* Top bar */
+.p2-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 50px 0;
+  position: relative;
+  z-index: 10;
+}
+.p2-tb-left {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.55rem;
+  letter-spacing: 0.45em;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+}
+.p2-tb-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: #fff;
+}
+.p2-tb-right {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.55rem;
+  letter-spacing: 0.45em;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+}
+
+/* Big headline overlapping the fold */
+.p2-headline-wrap {
+  position: absolute;
+  top: 240px;
+  left: 50px;
+  right: 50px;
+  z-index: 10;
+}
+.p2-pre {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.6rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 10px;
+}
+.p2-pre::before, .p2-pre::after {
+  content:'';
+  display: inline-block;
+  height: 1px;
+  width: 30px;
+  background: rgba(255,255,255,0.35);
+}
+
+.p2-headline-big {
+  font-family: 'DM Serif Display', serif;
+  font-size: 7.5rem;
+  line-height: 0.88;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.p2-headline-big .italic { font-style: italic; color: #f0c060; }
+
+/* Colour accent bar */
+.p2-accent-bar {
+  position: absolute;
+  top: 390px;
+  left: 50px;
+  width: 60px; height: 4px;
+  background: linear-gradient(90deg, #f0a030, #c9a84c);
+  z-index: 10;
+}
+
+/* Body text section */
+.p2-body {
+  position: absolute;
+  top: 468px;
+  left: 50px; right: 50px;
+  z-index: 10;
+}
+.p2-body-lead {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 1.55rem;
+  color: #2a1810;
+  line-height: 1.5;
+  margin-bottom: 22px;
+  max-width: 520px;
+}
+.p2-body-text {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 2;
+  color: rgba(40,20,10,0.6);
+  max-width: 460px;
+  letter-spacing: 0.04em;
+}
+
+/* Info columns */
+.p2-info-cols {
+  position: absolute;
+  bottom: 130px;
+  left: 50px; right: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid rgba(40,20,10,0.15);
+  padding-top: 22px;
+  z-index: 10;
+}
+.p2-info-col { padding-right: 24px; }
+.p2-info-col:not(:last-child) {
+  border-right: 1px solid rgba(40,20,10,0.1);
+  margin-right: 24px;
+}
+.p2-info-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.4rem;
+  color: #c9752a;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.p2-info-label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(40,20,10,0.45);
+}
+
+/* Bottom CTA */
+.p2-cta-row {
+  position: absolute;
+  bottom: 44px;
+  left: 50px; right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+.p2-cta-btn {
+  background: #1a4040;
+  color: #f5ede0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border: none;
+}
+.p2-cta-contact {
+  text-align: right;
+}
+.p2-cta-contact-label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.52rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(40,20,10,0.35);
+  margin-bottom: 3px;
+}
+.p2-cta-contact-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  color: #1a4040;
+}
+
+/* decorative tropical palm silhouette */
+.p2-palm {
+  position: absolute;
+  right: -10px;
+  bottom: 120px;
+  font-size: 9rem;
+  opacity: 0.06;
+  transform: scaleX(-1);
+  z-index: 1;
+  color: #1a4040;
+  pointer-events: none;
+}
+
+/* issue / edition watermark */
+.p2-issue {
+  position: absolute;
+  top: 70px;
+  right: 50px;
+  writing-mode: vertical-rl;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.52rem;
+  letter-spacing: 0.4em;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+
+/* ══════════════════════════════════════════
+   POSTER 3 — NEON NIGHT PARTY / EVENT
+   Midnight black + electric cyan + hot coral
+══════════════════════════════════════════ */
+.poster3 {
+  width: 700px;
+  height: 980px;
+  position: relative;
+  overflow: hidden;
+  background: #030508;
+  flex-shrink: 0;
+}
+
+.p3-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 60%, rgba(0,200,180,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 40%, rgba(255,80,100,0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,150,200,0.08) 0%, transparent 50%),
+    #030508;
+}
+
+/* grid lines */
+.p3-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,200,180,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,200,180,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* scan lines */
+.p3-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.15) 3px,
+    rgba(0,0,0,0.15) 4px
+  );
+  pointer-events: none;
+}
+
+.p3-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0) brightness(0.2) contrast(1.3);
+  mix-blend-mode: luminosity;
+}
+
+/* Neon glow overlay */
+.p3-glow-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 50%, rgba(0,220,200,0.06) 0%, transparent 60%);
+}
+
+.p3-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 52px 52px 44px;
+}
+
+/* top badge */
+.p3-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+  width: 100%;
+  justify-content: center;
+}
+.p3-badge-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,220,200,0.4), transparent);
+}
+.p3-badge-text {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 0.55rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: rgba(0,220,200,0.7);
+  white-space: nowrap;
+}
+
+/* HUGE title */
+.p3-title-block {
+  text-align: center;
+  position: relative;
+  margin-bottom: 8px;
+}
+.p3-title-slb {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11rem;
+  line-height: 0.85;
+  letter-spacing: 0.15em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(0,220,200,0.6);
+  position: relative;
+  display: block;
+}
+.p3-title-slb-filled {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11rem;
+  line-height: 0.85;
+  letter-spacing: 0.15em;
+  background: linear-gradient(135deg, #00dcc8 0%, #00b8a8 30%, rgba(0,220,200,0.6) 60%, #00dcc8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  text-align: center;
+  filter: blur(0px);
+  text-shadow: none;
+}
+/* Neon glow on title via pseudo */
+.p3-title-glow {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11rem;
+  line-height: 0.85;
+  letter-spacing: 0.15em;
+  color: #00dcc8;
+  filter: blur(18px);
+  opacity: 0.25;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  text-align: center;
+}
+
+.p3-sub-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.4rem;
+  letter-spacing: 0.55em;
+  color: rgba(255,80,100,0.9);
+  text-align: center;
+  display: block;
+  margin-top: 4px;
+  text-shadow: 0 0 20px rgba(255,80,100,0.5);
+}
+
+/* Divider neon */
+.p3-divider {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; margin: 22px 0;
+}
+.p3-div-line { flex:1; height:1px; background: linear-gradient(90deg, transparent, rgba(0,220,200,0.3), transparent); }
+.p3-div-dot { width:6px; height:6px; border-radius:50%; background:#00dcc8; box-shadow: 0 0 10px #00dcc8; }
+
+/* Center image frame */
+.p3-img-frame {
+  width: 100%;
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,220,200,0.2);
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+.p3-img-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: saturate(1.4) brightness(0.65) contrast(1.15) hue-rotate(10deg);
+}
+.p3-img-frame::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    180deg,
+    #030508 0%,
+    transparent 20%,
+    transparent 80%,
+    #030508 100%
+  );
+  z-index: 2;
+}
+.p3-img-frame::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,220,200,0.08) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(255,80,100,0.05) 100%
+  );
+  z-index: 3;
+}
+/* neon corner brackets */
+.p3-bracket {
+  position: absolute;
+  width: 20px; height: 20px;
+  z-index: 10;
+}
+.p3-bracket--tl { top:-1px; left:-1px; border-top:2px solid #00dcc8; border-left:2px solid #00dcc8; box-shadow: -2px -2px 8px rgba(0,220,200,0.4); }
+.p3-bracket--tr { top:-1px; right:-1px; border-top:2px solid #00dcc8; border-right:2px solid #00dcc8; box-shadow: 2px -2px 8px rgba(0,220,200,0.4); }
+.p3-bracket--bl { bottom:-1px; left:-1px; border-bottom:2px solid #ff5064; border-left:2px solid #ff5064; box-shadow: -2px 2px 8px rgba(255,80,100,0.4); }
+.p3-bracket--br { bottom:-1px; right:-1px; border-bottom:2px solid #ff5064; border-right:2px solid #ff5064; box-shadow: 2px 2px 8px rgba(255,80,100,0.4); }
+
+/* Event chips */
+.p3-chips {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.p3-chip {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border: 1px solid rgba(0,220,200,0.3);
+  color: rgba(0,220,200,0.8);
+  background: rgba(0,220,200,0.05);
+  white-space: nowrap;
+}
+.p3-chip.hot {
+  border-color: rgba(255,80,100,0.4);
+  color: rgba(255,80,100,0.9);
+  background: rgba(255,80,100,0.05);
+}
+
+/* Tagline */
+.p3-tagline {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 1.55rem;
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 8px 0 20px;
+}
+.p3-tagline strong { color: #00dcc8; font-style: normal; font-family: 'Raleway', sans-serif; font-weight: 300; }
+
+/* spacer */
+.p3-spacer { flex: 1; }
+
+/* Bottom */
+.p3-bottom {
+  width: 100%;
+  border-top: 1px solid rgba(0,220,200,0.12);
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.p3-time-label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.5rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 4px;
+}
+.p3-time-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+  color: #ff5064;
+  text-shadow: 0 0 16px rgba(255,80,100,0.5);
+}
+.p3-cta {
+  text-align: center;
+}
+.p3-cta-btn {
+  background: linear-gradient(135deg, #00dcc8, #008f84);
+  color: #030508;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  padding: 12px 36px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 4px 24px rgba(0,220,200,0.35);
+  display: block;
+}
+.p3-cta-sub {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.45rem;
+  letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.p3-website {
+  text-align: right;
+}
+.p3-web-label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.5rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin-bottom: 4px;
+}
+.p3-web-val {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: rgba(0,220,200,0.7);
+}
+
+/* ── SECTION LABELS ── */
+.poster-label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  font-size: 0.6rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* responsive scale on small screens */
+@media (max-width: 740px) {
+  .poster1, .poster2, .poster3 {
+    width: calc(100vw - 32px);
+    height: auto;
+    aspect-ratio: 700/980;
+    transform-origin: top center;
+  }
+}
+</style>
+</head>
+<body>
+
+<p class="page-title">SLB Beach Resort — Official Posters &nbsp;·&nbsp; 2025</p>
+
+<!-- ════════ POSTER 1: DARK LUXURY ════════ -->
+<div>
+  <p class="poster-label">Poster 01 &nbsp;·&nbsp; Dark Luxury</p>
+  <div class="poster1">
+    <div class="p1-bg"></div>
+    <div class="p1-ink"></div>
+    <div class="p1-ink"></div>
+    <div class="p1-ink"></div>
+    <div class="p1-ink"></div>
+
+    <img class="p1-img" src="beach_resort_pics.jpg" alt="SLB Resort">
+    <div class="p1-img-overlay"></div>
+
+    <!-- corner brackets -->
+    <div class="p1-corner p1-corner--tl"></div>
+    <div class="p1-corner p1-corner--tr"></div>
+    <div class="p1-corner p1-corner--bl"></div>
+    <div class="p1-corner p1-corner--br"></div>
+
+    <!-- top rule -->
+    <div class="p1-top-rule">
+      <div class="p1-rule-line"></div>
+      <div class="p1-rule-dot"></div>
+      <div class="p1-rule-line"></div>
+    </div>
+
+    <div class="p1-content">
+      <div class="p1-est">The Exclusive Retreat &nbsp;·&nbsp; Est. 2024</div>
+
+      <div class="p1-name">SLB</div>
+      <div class="p1-subtitle">Beach &nbsp; Resort</div>
+
+      <div class="p1-ornament">
+        <div class="p1-orn-line"></div>
+        <span class="p1-orn-icon">✦</span>
+        <div class="p1-orn-line"></div>
+      </div>
+
+      <p class="p1-tagline">
+        Where the <em>ocean</em> becomes your private sanctuary —<br>
+        moments crafted for those who seek<br>the extraordinary.
+      </p>
+
+      <div class="p1-spacer"></div>
+
+      <div class="p1-features">
+        <div class="p1-feat">
+          <span class="p1-feat-icon">🌊</span>
+          <div class="p1-feat-label">Overwater<br>Villas</div>
+        </div>
+        <div class="p1-feat">
+          <span class="p1-feat-icon">🎶</span>
+          <div class="p1-feat-label">Live<br>Events</div>
+        </div>
+        <div class="p1-feat">
+          <span class="p1-feat-icon">🥂</span>
+          <div class="p1-feat-label">Private<br>Dining</div>
+        </div>
+        <div class="p1-feat">
+          <span class="p1-feat-icon">🛥️</span>
+          <div class="p1-feat-label">Water<br>Sports</div>
+        </div>
+        <div class="p1-feat">
+          <span class="p1-feat-icon">⏱️</span>
+          <div class="p1-feat-label">Hourly<br>Rental</div>
+        </div>
+      </div>
+
+      <div class="p1-bottom">
+        <div class="p1-booking">
+          <div class="p1-book-label">Reserve Your Escape</div>
+          <div class="p1-book-cta">Book Now</div>
+        </div>
+        <div class="p1-hours">
+          <div class="p1-hours-num">24H</div>
+          <div class="p1-hours-label">Max Rental</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ POSTER 2: TROPICAL EDITORIAL ════════ -->
+<div>
+  <p class="poster-label">Poster 02 &nbsp;·&nbsp; Tropical Editorial</p>
+  <div class="poster2">
+    <div class="p2-bg"></div>
+    <div class="p2-header-block"></div>
+    <img class="p2-img" src="hq720.jpg" alt="SLB Resort aerial">
+
+    <!-- top bar -->
+    <div class="p2-topbar">
+      <div class="p2-tb-left">Luxury &nbsp;·&nbsp; Escape</div>
+      <div class="p2-tb-logo">SLB</div>
+      <div class="p2-tb-right">Est. 2024</div>
+    </div>
+
+    <div class="p2-issue">Vol. I &nbsp;·&nbsp; Beach Resort &nbsp;·&nbsp; 2025</div>
+
+    <!-- big headline overlapping the image fold -->
+    <div class="p2-headline-wrap">
+      <div class="p2-pre">The Ultimate Retreat</div>
+      <div class="p2-headline-big">
+        Beach<br><span class="italic">Paradise</span>
+      </div>
+    </div>
+
+    <!-- gold accent -->
+    <div class="p2-accent-bar"></div>
+
+    <div class="p2-body">
+      <p class="p2-body-lead">
+        "A place where the sea whispers your name and every hour feels like eternity."
+      </p>
+      <p class="p2-body-text">
+        SLB Beach Resort offers an unmatched overwater experience — available for private rental from 1 to 24 hours. Whether it's an intimate gathering, a grand celebration, or simply a moment to breathe, SLB turns every occasion into a memory that lasts forever.
+      </p>
+    </div>
+
+    <!-- info columns -->
+    <div class="p2-info-cols">
+      <div class="p2-info-col">
+        <div class="p2-info-num">24H</div>
+        <div class="p2-info-label">Maximum<br>Rental Time</div>
+      </div>
+      <div class="p2-info-col">
+        <div class="p2-info-num">100%</div>
+        <div class="p2-info-label">Private &<br>Exclusive</div>
+      </div>
+      <div class="p2-info-col">
+        <div class="p2-info-num">★★★★★</div>
+        <div class="p2-info-label">Luxury<br>Class Resort</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="p2-cta-row">
+      <div class="p2-cta-btn">Reserve Your Stay</div>
+      <div class="p2-cta-contact">
+        <div class="p2-cta-contact-label">Enquiries</div>
+        <div class="p2-cta-contact-val">slbbeachresort.com</div>
+      </div>
+    </div>
+
+    <div class="p2-palm">🌴</div>
+  </div>
+</div>
+
+<!-- ════════ POSTER 3: NEON NIGHT / EVENT ════════ -->
+<div>
+  <p class="poster-label">Poster 03 &nbsp;·&nbsp; Neon Night &amp; Events</p>
+  <div class="poster3">
+    <div class="p3-bg"></div>
+    <div class="p3-grid"></div>
+    <div class="p3-scanlines"></div>
+    <img class="p3-img" src="hq720.jpg" alt="SLB Resort">
+    <div class="p3-glow-overlay"></div>
+
+    <div class="p3-content">
+
+      <div class="p3-badge">
+        <div class="p3-badge-line"></div>
+        <div class="p3-badge-text">SLB &nbsp;·&nbsp; Exclusive Beach Resort &nbsp;·&nbsp; Doha</div>
+        <div class="p3-badge-line"></div>
+      </div>
+
+      <!-- Giant title -->
+      <div class="p3-title-block">
+        <span class="p3-title-glow" aria-hidden="true">SLB</span>
+        <span class="p3-title-slb" aria-hidden="true">SLB</span>
+        <span class="p3-title-slb-filled">SLB</span>
+      </div>
+      <span class="p3-sub-title">Beach Resort</span>
+
+      <div class="p3-divider">
+        <div class="p3-div-line"></div>
+        <div class="p3-div-dot"></div>
+        <div class="p3-div-line"></div>
+      </div>
+
+      <!-- Centre image -->
+      <div class="p3-img-frame">
+        <img src="beach_resort_pics.jpg" alt="Resort">
+        <div class="p3-bracket p3-bracket--tl"></div>
+        <div class="p3-bracket p3-bracket--tr"></div>
+        <div class="p3-bracket p3-bracket--bl"></div>
+        <div class="p3-bracket p3-bracket--br"></div>
+      </div>
+
+      <!-- chips -->
+      <div class="p3-chips">
+        <div class="p3-chip">🌊 Overwater Villas</div>
+        <div class="p3-chip hot">🎶 Live Entertainment</div>
+        <div class="p3-chip">🥂 Private Events</div>
+        <div class="p3-chip hot">🛥️ Water Sports</div>
+        <div class="p3-chip">🎉 Group Parties</div>
+        <div class="p3-chip hot">⏱️ 1–24 Hour Rental</div>
+      </div>
+
+      <p class="p3-tagline">
+        Your island. Your rules.<br>
+        <strong>Book by the hour.</strong> Own the night.
+      </p>
+
+      <div class="p3-spacer"></div>
+
+      <div class="p3-bottom">
+        <div>
+          <div class="p3-time-label">Open Daily</div>
+          <div class="p3-time-val">24 / 7</div>
+        </div>
+        <div class="p3-cta">
+          <div class="p3-cta-btn">Book Now</div>
+          <div class="p3-cta-sub">Instant Confirmation</div>
+        </div>
+        <div class="p3-website">
+          <div class="p3-web-label">Visit Us</div>
+          <div class="p3-web-val">slbbeachresort.com</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
