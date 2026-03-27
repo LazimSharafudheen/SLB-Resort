@@ -933,13 +933,46 @@
       const btn = document.getElementById('slb-confirm-btn');
       btn.textContent = 'Sending...'; btn.style.opacity = '0.6'; btn.disabled = true;
       const formattedDate = new Date(date).toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-      const payload = { username: 'SLB Beach Resort', embeds: [{ title: '🏖️ New Reservation Request', color: 0xC9A84C, fields: [{ name: '🎮 In-Game Name', value: name, inline: true }, { name: '🔢 In-Game Number', value: number, inline: true }, { name: '👥 Number of Guests', value: guests, inline: true }, { name: '⏱️ Duration', value: hours, inline: true }, { name: '📅 Date', value: formattedDate, inline: true }], footer: { text: 'SLB Beach Resort · Luxury Overwater Experience' }, timestamp: new Date().toISOString() }] };
+      const payload = {
+        username: 'SLB Beach Resort',
+        embeds: [{
+          color: 0xC9A84C,
+          title: '🏖️  New Reservation Request',
+          description: '*A new booking has been submitted at SLB Beach Resort*',
+          fields: [
+            { name: '🎮  In-Game Name',     value: '```' + name + '```',          inline: true  },
+            { name: '🔢  In-Game Number',   value: '```' + number + '```',        inline: true  },
+            { name: '👥  Number of Guests', value: '```' + guests + '```',        inline: true  },
+            { name: '⏱️  Duration',         value: '```' + hours + '```',         inline: true  },
+            { name: '📅  Date',             value: '```' + formattedDate + '```', inline: true  },
+          ],
+          footer: { text: 'SLB Beach Resort  ·  Luxury Overwater Experience' },
+          timestamp: new Date().toISOString()
+        }]
+      };
       try {
-        const res = await fetch('https://discord.com/api/webhooks/1486753730433909051/If9plbMSW6vS1YHFkj0U7uB30eIRQYUeOU7SnHa7R1M8V_EeFIwMNfOPwq21apju-1Gj', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-        if (res.ok) { btn.textContent = '✅ Reservation Sent!'; btn.style.background = 'linear-gradient(135deg,#2a9d5c,#1a7040)'; btn.style.color = '#fff'; btn.style.opacity = '1'; setTimeout(() => { document.getElementById('slb-popup-overlay').remove(); }, 2000); }
-        else throw new Error('Webhook failed');
+        const webhookUrl = 'https://discord.com/api/webhooks/1486753730433909051/If9plbMSW6vS1YHFkj0U7uB30eIRQYUeOU7SnHa7R1M8V_EeFIwMNfOPwq21apju-1Gj';
+        const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(webhookUrl);
+        const res = await fetch(proxyUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (res.ok || res.status === 204) {
+          btn.textContent = '✅ Reservation Sent!';
+          btn.style.background = 'linear-gradient(135deg,#2a9d5c,#1a7040)';
+          btn.style.color = '#fff'; btn.style.opacity = '1';
+          setTimeout(() => { document.getElementById('slb-popup-overlay').remove(); }, 2000);
+        } else {
+          const errText = await res.text();
+          console.error('Discord error:', res.status, errText);
+          throw new Error('Webhook failed: ' + res.status);
+        }
       } catch (e) {
-        btn.textContent = '❌ Failed. Try Again.'; btn.style.background = 'linear-gradient(135deg,#c0392b,#922b21)'; btn.style.color = '#fff'; btn.style.opacity = '1'; btn.disabled = false;
+        console.error('Send error:', e);
+        btn.textContent = '❌ Failed. Try Again.';
+        btn.style.background = 'linear-gradient(135deg,#c0392b,#922b21)';
+        btn.style.color = '#fff'; btn.style.opacity = '1'; btn.disabled = false;
         setTimeout(() => { btn.textContent = 'Confirm Reservation'; btn.style.background = 'linear-gradient(135deg,#c9a84c,#a07830)'; btn.style.color = '#051520'; }, 3000);
       }
     };
