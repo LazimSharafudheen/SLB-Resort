@@ -933,46 +933,7 @@
       const btn = document.getElementById('slb-confirm-btn');
       btn.textContent = 'Sending...'; btn.style.opacity = '0.6'; btn.disabled = true;
       const formattedDate = new Date(date).toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-      const payload = {
-        username: 'SLB Beach Resort',
-        flags: 32768,
-        components: [
-          {
-            type: 17,
-            accent_color: 0xC9A84C,
-            components: [
-              {
-                type: 10,
-                content: "# 🏖️ New Reservation Request\n*A new booking has been submitted at SLB Beach Resort*"
-              },
-              {
-                type: 14,
-                divider: true,
-                spacing: 1
-              },
-              {
-                type: 10,
-                content: [
-                  `🎮  **In-Game Name**\n> ${name}`,
-                  `🔢  **In-Game Number**\n> ${number}`,
-                  `👥  **Number of Guests**\n> ${guests}`,
-                  `⏱️  **Duration**\n> ${hours}`,
-                  `📅  **Date**\n> ${formattedDate}`
-                ].join('\n\n')
-              },
-              {
-                type: 14,
-                divider: true,
-                spacing: 1
-              },
-              {
-                type: 10,
-                content: `-# SLB Beach Resort · Luxury Overwater Experience · ${new Date().toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}`
-              }
-            ]
-          }
-        ]
-      };
+      const payload = { username: 'SLB Beach Resort', embeds: [{ title: '🏖️ New Reservation Request', color: 0xC9A84C, fields: [{ name: '🎮 In-Game Name', value: name, inline: true }, { name: '🔢 In-Game Number', value: number, inline: true }, { name: '👥 Number of Guests', value: guests, inline: true }, { name: '⏱️ Duration', value: hours, inline: true }, { name: '📅 Date', value: formattedDate, inline: true }], footer: { text: 'SLB Beach Resort · Luxury Overwater Experience' }, timestamp: new Date().toISOString() }] };
       try {
         const res = await fetch('https://discord.com/api/webhooks/1486753730433909051/If9plbMSW6vS1YHFkj0U7uB30eIRQYUeOU7SnHa7R1M8V_EeFIwMNfOPwq21apju-1Gj', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
         if (res.ok) { btn.textContent = '✅ Reservation Sent!'; btn.style.background = 'linear-gradient(135deg,#2a9d5c,#1a7040)'; btn.style.color = '#fff'; btn.style.opacity = '1'; setTimeout(() => { document.getElementById('slb-popup-overlay').remove(); }, 2000); }
